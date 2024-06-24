@@ -51,9 +51,9 @@ const BusinessMap = () => {
 
   useEffect(() => {
     if (photoName === "wolf1.jpg") {
-      setFilteredBusinesses(businesses.filter((b) => b.id < 5));
-    } else {
       setFilteredBusinesses(businesses.filter((b) => b.id > 5));
+    } else {
+      setFilteredBusinesses(businesses.filter((b) => b.id < 5));
     }
   }, [photoName]);
 

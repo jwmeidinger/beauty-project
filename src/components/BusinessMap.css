@@ -1,37 +1,69 @@
 /* BusinessMap.css */
 
+/* Reset styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 .business-map-container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .map-section {
-    flex: 3;
-    height: 100%;
-  }
-  
-  .listing-section {
-    width: 400px;
-    padding: 10px;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .business-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.map-section {
+  flex: 1;
+  height: 100%;
+  position: relative; /* Add this */
+}
+
+.map-section .leaflet-container {
+  position: absolute; /* Add this */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.listing-section {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  padding: 10px;
+  background-color: #fff; /* Add a background color */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.business-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  margin-right: -17px;
+  padding-right: 17px;
+}
+
+.business-list::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
   
   .business-card {
     border: 1px solid #e0e0e0;
