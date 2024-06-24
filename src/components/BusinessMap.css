@@ -1,0 +1,118 @@
+/* BusinessMap.css */
+
+.business-map-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .map-section {
+    flex: 3;
+    height: 100%;
+  }
+  
+  .listing-section {
+    width: 400px;
+    padding: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .business-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .business-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: visible; /* Changed from hidden to visible */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 15px;
+    position: relative;
+  }
+  
+  .business-card.selected {
+    border-color: #4a90e2;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+  }
+  
+  .business-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+  }
+  
+  .rating-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .rating {
+    color: #f39c12;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: #27ae60;
+  }
+  
+  .image-carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    height: 150px;
+    position: relative;
+  }
+  
+  .carousel-image {
+    height: 100%;
+    flex: 1;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .carousel-image:hover img {
+    transform: scale(var(--scale-x), var(--scale-y));
+    z-index: 10;
+  }
+  
+  .carousel-image.preview img {
+    filter: brightness(0.8);
+  }
+  
+  .carousel-image.preview:hover img {
+    filter: brightness(1);
+  }
+  
+  /* Ensure the hovered image stays on top */
+  .business-card:hover .carousel-image:hover img {
+    z-index: 20;
+  }
+  
