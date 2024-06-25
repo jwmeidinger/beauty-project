@@ -51,9 +51,9 @@ const BusinessMap = () => {
 
   useEffect(() => {
     if (photoName === "wolf1.jpg") {
-      setFilteredBusinesses(businesses.filter((b) => b.id > 5));
+      setFilteredBusinesses(businesses.filter((b) => b.id >= 5));
     } else {
-      setFilteredBusinesses(businesses.filter((b) => b.id < 5));
+      setFilteredBusinesses(businesses.filter((b) => b.id <= 5));
     }
   }, [photoName]);
 
@@ -90,11 +90,20 @@ const BusinessMap = () => {
   };
 
   return (
+    <>
+    <nav className="nav-bar">
+    <div className="nav-container">
+      <div className="nav-logo">Ztyle</div>
+      <div className="nav-links">
+        <a onClick={() => navigate("/")}>Home</a>
+      </div>
+    </div>
+  </nav>
     <div className="business-map-container">
       <div className="map-section">
         <MapContainer
-          center={[39.7392, -104.9903]}
-          zoom={13}
+          center={[33.4992, -111.9203]}
+          zoom={15}
           style={{ height: "100%", width: "100%" }}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -115,10 +124,7 @@ const BusinessMap = () => {
         </MapContainer>
       </div>
       <div className="listing-section">
-        <div className="header">
-          <h1>Hair Salons in Denver</h1>
-          <button onClick={() => navigate("/")}>Home</button>
-        </div>
+        <h1>Results based off your search</h1>
         <div className="business-list">
           {filteredBusinesses.map((business) => (
             <div
@@ -165,6 +171,7 @@ const BusinessMap = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 
