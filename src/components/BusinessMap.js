@@ -6,6 +6,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./BusinessMap.css";
 import { businesses } from "../data/businesses";
+import NavBar from './NavBar';
 import useImageDimensions from "../hooks/useImageDimensions";
 
 const CarouselImage = ({ image, businessName, type, onClick }) => {
@@ -91,14 +92,7 @@ const BusinessMap = () => {
 
   return (
     <>
-    <nav className="nav-bar">
-    <div className="nav-container">
-      <div className="nav-logo">Ztyle</div>
-      <div className="nav-links">
-        <a onClick={() => navigate("/")}>Home</a>
-      </div>
-    </div>
-  </nav>
+    <NavBar />
     <div className="business-map-container">
       <div className="map-section">
         <MapContainer
